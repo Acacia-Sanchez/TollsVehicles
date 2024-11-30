@@ -27,3 +27,6 @@ Se requiere que la **estación de peaje** calcule:
 * Repositorio de Github
 * Captura de pantalla del diagrama de clase o enlace público al archivo de diagrams.net
 * Captura de pantalla de la sección testing de VSCode que muestre que se ha complido con la cobertura de tests y en la que se pueda ver la cantidad de tests realizados
+
+
+[UML LINK](https://drive.google.com/file/d/19wozJx-ws2N8H1zKmGUCSVm357-YCZiy/view?usp=sharing)
