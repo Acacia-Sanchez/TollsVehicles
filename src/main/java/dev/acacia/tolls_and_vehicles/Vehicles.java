@@ -1,6 +1,6 @@
 package dev.acacia.tolls_and_vehicles;
 
-public abstract class Vehicles {
+public class Vehicles {
     protected String plate;
     protected float amountToll;
 

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TollStation {
-    private String name, city;
-    List<Vehicles> vehicles;
+    private String name = "", city = "";
+    List<Vehicles> vehicles = new ArrayList<>(); // inicializa lista vehiculos, para evitar NullPointerException al estar vacia
     private float totalAmount;  
     
-    TollStation tollStation = new TollStation("Tremañes", "Gijón", vehicles, 0);
+    //TollStation tollStation = new TollStation("Tremañes", "Gijón", vehicles, 0);
 
     public TollStation(String name, String city, List<Vehicles> vehicles, float totalAmount) {
         this.name = name;
@@ -18,7 +18,7 @@ public class TollStation {
     }
 
     public TollStation() {
-        vehicles = new ArrayList<>(); // esto inicializa la lista de vehiculos, para evitar NullPointerException al estar vacia
+        
     }   
 
     public String getName() {
@@ -49,27 +49,26 @@ public class TollStation {
         this.totalAmount = totalAmount;
     } 
 
-    public void addCar() {
+    public void addCar(String plate) {
         Car car = new Car();
-        car.setPlate("CAR1234");
+        car.setPlate(plate);
         vehicles.add(car);
-        car.setAmountToll();
         System.out.println("Car added. Plate: " + car.getPlate() + " Amount: " + car.getAmountToll());
         totalAmount += car.getAmountToll();
     }
 
-    public void addMoto() {
+    public void addMoto(String plate) {
         Moto moto = new Moto();
-        moto.setPlate("MOTO2345");
-        moto.setAmountToll();
+        moto.setPlate(plate);
         vehicles.add(moto);
         System.out.println("Moto added. Plate: " + moto.getPlate() + " Amount: " + moto.getAmountToll());
         totalAmount += moto.getAmountToll();
     }
 
-    public void addTruck() {
-        Truck truck = new Truck("TRUCK54568", 0, 3);
-        truck.setAmountToll();
+    public void addTruck(String name) {
+        Truck truck = new Truck();
+        truck.setPlate(name);
+        truck.setAxis(3);
         vehicles.add(truck);
         System.out.println("Truck added. Plate: " + truck.getPlate() + " Amount: " + truck.getAmountToll());
         totalAmount += truck.getAmountToll();
@@ -82,7 +81,7 @@ public class TollStation {
     }
 
     public void printTotalAmount() {
-        System.out.println("Toll Station: " + name + " from city: " + city + " Total amount collected: " + totalAmount);
+        System.out.println(String.format("Toll Station: %s from city: %s. Total amount collected: %s", name, city, totalAmount));
     }
 
 }
